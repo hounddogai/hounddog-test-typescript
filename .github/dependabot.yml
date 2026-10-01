@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /client
+    schedule:
+      interval: monthly
+    groups:
+      client-version-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+      client-security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /server
+    schedule:
+      interval: monthly
+    groups:
+      server-version-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+      server-security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      github-actions-version-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+      github-actions-security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: docker-compose
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      docker-compose-version-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+      docker-compose-security-updates:
+        applies-to: security-updates
+        patterns: ["*"]
