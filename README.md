@@ -8,7 +8,7 @@ its patterns.
 
 - `client/`: TypeScript, React 19, React Router 8 (framework mode), Vite, Tailwind CSS 4
 - `server/`: JavaScript (ES modules) on Express 5, with patient data kept in memory
-- Node.js 24 (see `.nvmrc`), npm, ESLint, Prettier
+- Node.js 24 (see `.nvmrc`), npm, Biome
 
 ## Run
 

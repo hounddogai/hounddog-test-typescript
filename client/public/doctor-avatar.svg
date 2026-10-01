@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Doctor avatar</title>
   <circle cx="32" cy="32" r="32" fill="#d1fae5"/>
   <path d="M10 58c2-12 11-18 22-18s20 6 22 18a32 32 0 0 1-44 0z" fill="#ffffff"/>
   <path d="M27 40l5 9 5-9z" fill="#0f766e"/>

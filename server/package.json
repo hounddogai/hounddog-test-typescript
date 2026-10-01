@@ -7,9 +7,9 @@
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "node --test",
-    "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "lint": "biome lint",
+    "format": "biome format --write",
+    "format:check": "biome format"
   },
   "engines": {
     "node": ">=24"
@@ -23,8 +23,6 @@
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.11.0",
-    "prettier": "^3.9.9"
+    "@biomejs/biome": "2.5.14"
   }
 }

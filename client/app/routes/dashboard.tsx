@@ -67,6 +67,7 @@ export default function Dashboard({ loaderData }: Route.ComponentProps) {
         {recentVisits.length ? (
           <ul className="divide-y divide-slate-100">
             {recentVisits.map(({ patientId, name, visit }, position) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: visits have no ID to key on
               <li key={`${patientId}-${position}`} className="flex items-center justify-between gap-4 py-3">
                 <div>
                   <Link to={`/patients/${patientId}/visits`} className="font-medium hover:text-emerald-700">

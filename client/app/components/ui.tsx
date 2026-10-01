@@ -34,6 +34,7 @@ export const inputClass =
 
 export function Field({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: callers pass the input as children, which the rule cannot see
     <label className="flex flex-col gap-1.5">
       <span className="text-sm font-medium text-slate-700">{label}</span>
       {children}

@@ -18,10 +18,10 @@ const port = Number(process.env.PORT ?? 5174);
 const SF_LOGIN_URL = "https://login.salesforce.com";
 // Hardcoded credentials are intentional scanner findings. The fixture never logs in to Salesforce with them, so the
 // Contact create below fails before any network call and the error is logged.
-/* eslint-disable no-unused-vars */
+// biome-ignore-start lint/correctness/noUnusedVariables: the unused credentials are intentional scanner findings
 const SF_USERNAME = "salesforce_username";
 const SF_PASSWORD = "salesforce_password";
-/* eslint-enable no-unused-vars */
+// biome-ignore-end lint/correctness/noUnusedVariables: the unused credentials are intentional scanner findings
 
 // Deliberately permissive: any origin, a hardcoded session secret, and a non-secure session cookie.
 app.use(cors());
@@ -62,7 +62,7 @@ const syncToSalesforce = async (patient) => {
   }
 };
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.type("text").send("Avocado Doctors Portal API");
 });
 
@@ -100,7 +100,7 @@ app.post("/patients", async (req, res) => {
   res.status(201).json(patient);
 });
 
-app.get("/patients/:id", requirePatient, (req, res) => {
+app.get("/patients/:id", requirePatient, (_req, res) => {
   const { patient } = res.locals;
   // The whole record goes into a cookie that page scripts can read.
   res.cookie("patient-info", JSON.stringify(patient), { maxAge: 60 * 60_000, httpOnly: false });
@@ -122,12 +122,12 @@ app.post("/patients/:id/visits", requirePatient, (req, res) => {
   res.status(201).json(registry.addVisit(req.params.id, req.body ?? {}));
 });
 
-app.get("/patients/:id/exports/visits", requirePatient, (req, res) => {
+app.get("/patients/:id/exports/visits", requirePatient, (_req, res) => {
   const { patient } = res.locals;
   writeAndDownloadData(`${patient.firstName}-${patient.lastName}-${patient.mrn}-visits.txt`, patient.visits, res);
 });
 
-app.get("/patients/:id/exports/profile", requirePatient, (req, res) => {
+app.get("/patients/:id/exports/profile", requirePatient, (_req, res) => {
   const { patient } = res.locals;
   writeAndDownloadData(`${patient.firstName}-${patient.lastName}-${patient.mrn}-profile.txt`, patient, res);
 });

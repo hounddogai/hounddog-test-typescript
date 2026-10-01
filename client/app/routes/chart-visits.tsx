@@ -47,6 +47,7 @@ export default function ChartVisits({ actionData }: Route.ComponentProps) {
         {timeline.length ? (
           timeline.map((visit, position) => (
             <article
+              // biome-ignore lint/suspicious/noArrayIndexKey: visits have no ID to key on
               key={`${visit.date}-${position}`}
               className="rounded-2xl border-l-4 border-emerald-600 bg-white p-5 shadow-sm ring-1 ring-slate-200"
             >
