@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output and generated types
+build/
+.react-router/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Direnv
+.envrc
+.direnv/
+
+# HoundDog.ai scan output, such as hounddog.sarif and hounddog.json from the CI fixtures
+/hounddog*
+
+# Python
+__pycache__/
+
+tmp/
+
+# Sentry config files
+.sentryclirc
+.env.sentry-build-plugin
