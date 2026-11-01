@@ -17,12 +17,12 @@
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
-    "express": "^5.2.1",
+    "express": "^5.3.0",
     "express-session": "^1.19.0",
-    "jsforce": "^3.10.27",
+    "jsforce": "^3.13.1",
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.14"
+    "@biomejs/biome": "2.6.4"
   }
 }
